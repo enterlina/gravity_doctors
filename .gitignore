@@ -1,0 +1,29 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Node/npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Flask/App local data or generation files
+/agy-cli-projects/news.txt
+/agy-cli-projects/summary.txt
+/models_out.txt

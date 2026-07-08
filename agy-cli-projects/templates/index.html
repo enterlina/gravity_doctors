@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigQuery Release Notes Explorer</title>
+  <meta name="description" content="A modern web interface to browse and share Google Cloud BigQuery release updates.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Drawer Backdrop -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+  <!-- App Main Layout -->
+  <div id="app-container" class="app-container">
+    
+    <!-- Top Header -->
+    <header>
+      <div class="brand">
+        <h1>BigQuery Release Notes</h1>
+        <p>Stay up to date with the latest features, announcements, and issues in Google Cloud BigQuery</p>
+      </div>
+      
+      <div class="actions-bar">
+        <!-- Search bar -->
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="search-input" placeholder="Search release notes...">
+        </div>
+        
+        <!-- Refresh button -->
+        <button id="refresh-btn" class="btn-refresh" title="Refresh Feed">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Filters Pills -->
+    <div class="filters-container">
+      <button class="filter-pill active" data-filter="ALL">All Updates</button>
+      <button class="filter-pill" data-filter="FEATURE">Features</button>
+      <button class="filter-pill" data-filter="UPDATE">Updates</button>
+      <button class="filter-pill" data-filter="ANNOUNCEMENT">Announcements</button>
+      <button class="filter-pill" data-filter="ISSUE">Issues</button>
+      <button class="filter-pill" data-filter="DEPRECATION">Deprecations</button>
+    </div>
+
+    <!-- Notes Grid -->
+    <main id="notes-container" class="notes-grid">
+      <!-- Card items will be rendered dynamically by app.js -->
+    </main>
+  </div>
+
+  <!-- Slide-over Tweet Composer Drawer -->
+  <aside id="tweet-drawer" class="tweet-drawer" aria-labelledby="drawer-title">
+    <div class="drawer-header">
+      <h2 id="drawer-title">Compose Tweet</h2>
+      <button id="close-drawer-btn" class="btn-close-drawer" aria-label="Close composer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="drawer-body">
+      <!-- Selected note preview -->
+      <div class="update-preview-box">
+        <div class="preview-meta">
+          <span id="preview-type" class="type-badge">Feature</span>
+          <span id="preview-date" class="card-date">June 17, 2026</span>
+        </div>
+        <div id="preview-text" class="preview-text">
+          Loading preview...
+        </div>
+      </div>
+      
+      <!-- Composer input -->
+      <div class="composer-wrapper">
+        <label for="tweet-textarea">Tweet text</label>
+        <textarea id="tweet-textarea" class="composer-textarea" placeholder="What's happening?"></textarea>
+      </div>
+      
+      <!-- Composer Footer actions -->
+      <div class="composer-footer">
+        <span id="char-counter" class="char-counter">0 / 280</span>
+        <button id="send-tweet-btn" class="btn-send-tweet">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Tweet on X
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Script references -->
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
