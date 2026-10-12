@@ -1,6 +1,6 @@
 # Gravity Doctors Project Suite
 
-This repository contains two main tools:
+A collection of small tools for exploring information through a web dashboard and a command-line interface. This repository contains two main tools:
 
 1. **BigQuery Release Notes Explorer** (Python Flask Web App) - A modern, dark-themed dashboard to search, filter, and share Google Cloud BigQuery release updates.
 2. **Google News CLI** (Node.js Command Line Interface) - An elegant terminal tool to fetch and query Google News headlines.
@@ -20,7 +20,8 @@ A web interface that parses the official Google Cloud BigQuery RSS feed, segment
 
 1. Navigate to the project root directory:
    ```bash
-   cd /Users/elenadalbonidarocha/Documents/gravity_doctors
+   git clone https://github.com/enterlina/gravity_doctors.git
+   cd gravity_doctors
    ```
 2. Start the Flask application server:
    ```bash
@@ -85,3 +86,7 @@ After linking, you can run:
 ```bash
 google-news --search "artificial intelligence"
 ```
+
+## Author
+
+Elena Dalboni da Rocha · [Portfolio and current work](https://buildnxt.app) · [GitHub](https://github.com/enterlina)
